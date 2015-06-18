@@ -6,9 +6,9 @@ var traceur = require('gulp-traceur');
 
 var PATHS = {
     src: {
-      js: 'src/**/*.js',
-      html: 'src/**/*.html',
-      less: 'src/**/*.less'
+        js: 'src/**/*.js',
+        html: 'src/**/*.html',
+        less: 'src/**/*.less'
     },
     lib: [
         'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
@@ -21,8 +21,8 @@ var PATHS = {
     ]
 };
 
-gulp.task('clean', function(done) {
-  del(['dist'], done);
+gulp.task('clean', function (done) {
+    del(['dist'], done);
 });
 
 gulp.task('js', function () {
@@ -63,6 +63,9 @@ gulp.task('angular2', function () {
             // auto-detection fails to detect properly
             'rx': {
                 format: 'cjs' //https://github.com/systemjs/builder/issues/123
+            },
+            'angular2/es5build': {
+                build: false
             }
         }
     };
@@ -70,7 +73,7 @@ gulp.task('angular2', function () {
     var Builder = require('systemjs-builder');
     var builder = new Builder(buildConfig);
 
-    return builder.build('angular2/angular2', 'dist/lib/angular2.js', {});
+    return builder.build('angular2/*', 'dist/lib/angular2.js', {});
 });
 
 gulp.task('play', ['default'], function () {
