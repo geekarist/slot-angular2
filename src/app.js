@@ -23,7 +23,7 @@ import {Route1, Route2} from 'routes';
     directives: [XkeSlots, XkeFilter, RouterOutlet, RouterLink]
 })
 @RouteConfig([
-    {path: '#/', component: Route1},
+    {path: '/', component: Route1},
     {path: '#/route1', component: Route1, as: 'route1'},
     {path: '#/route2', component: Route2, as: 'route2'}
 ])
