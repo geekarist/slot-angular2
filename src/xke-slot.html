@@ -1,0 +1,11 @@
+<div class="count">
+    <div>{{model.attendees}}</div>
+</div>
+
+<div class="title">{{model.title}}</div>
+
+<ul>
+    <li *ng-for="#speaker of model.speakers">{{speaker}}</li>
+</ul>
+
+<button>RSVP</button>

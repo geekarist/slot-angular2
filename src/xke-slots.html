@@ -1,0 +1,7 @@
+<p>
+    slots count: {{getSlots().length}}
+</p>
+
+<ul>
+    <li *ng-for="#slot of getSlots()"><xke-slot [model]="slot"></xke-slot></li>
+</ul>
